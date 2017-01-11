@@ -32,12 +32,12 @@ Enemy.prototype.update = function(dt) {
 
     // Refresh enemy when it reaches the canvas extrem right
     if (this.x > 504) {
-      // Set enemy x start position
-      this.x = 0;
-      // Set enemy position to random value on yArray
-      this.y = yArray[Math.floor(Math.random() * yArray.length)];
-      // Set enemy velocity to random value between 10 and 30 and multiply by the level to increase difficulty
-      this.veloc = Math.floor((Math.random() * 30) + 10) * level;
+        // Set enemy x start position
+        this.x = 0;
+        // Set enemy position to random value on yArray
+        this.y = yArray[Math.floor(Math.random() * yArray.length)];
+        // Set enemy velocity to random value between 10 and 30 and multiply by the level to increase difficulty
+        this.veloc = Math.floor((Math.random() * 30) + 10) * level;
     }
 
     // Check if enemy hit player
@@ -78,11 +78,10 @@ Player.prototype.handleInput = function(keyPress) {
     switch (keyPress) {
         case 'up':
             this.y = this.y - 83;
-            if (player.y < 0) {
-              this.x = 202;
-              this.y = 373.5;
-              level++;
-              // console.log(level);
+            if (this.y < 0) {
+                this.x = 202;
+                this.y = 373.5;
+                level++;
             }
             break;
         case 'down':
