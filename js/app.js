@@ -49,8 +49,10 @@ Enemy.prototype.update = function(dt) { // dt = time delta between ticks
     player.x = 202;
     player.y = 373.5;
 
+    // Enemies go to random positions
     allEnemies.forEach(function(enemy) {
       enemy.x = Math.floor((Math.random() * 504) + -90);
+      enemy.y = enemy.yArray[Math.floor(Math.random() * enemy.yArray.length)];
     });
 
     // Return to level 1
@@ -122,8 +124,6 @@ var allEnemies = [new Enemy(), new Enemy(), new Enemy()];
 
 // Instantiate player
 var player = new Player();
-
-console.log(allEnemies);
 
 // Listen for key presses and send keys to Player.handleInput() method
 document.addEventListener('keyup', function(e) {
