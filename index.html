@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Guizo`s Frogger Game</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta name="author" content="Guizo">
+  <meta name="description" content="Guizo`s Frogger Game. An adapted version of Frogger game.">
+  <title>Guizo`s Frogger Game</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+
+<body class="flex-center">
+
+  <div class="wrapper">
     <div class="level">
       Level: <span></span>
     </div>
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
+    <div id="canvas-wrapper"></div>
+
+    <footer>
+      <p id="footnote">
+        Made with <i class='fa fa-heart'></i> by <a href="http://guizo-portfolio.kissr.com/" target="_blank" title="guizo`s page">guizo</a>. <a id='git-a' href='https://github.com/guizoxxv/udacity-classic-arcade-game-clone' target="_blank" title='GitHub repository'>View on GitHub<i class='fa fa-github'></i></a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="js/resources.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/engine.js"></script>
+
 </body>
 </html>
