@@ -8,9 +8,9 @@ var Enemy = function() {
   this.sprite = 'images/enemy-bug.png';
 
   // Set enemy x start position
-  // this.x = 0;
+  // this.x = -90;
   // Enemy starts at random x position
-  this.x = Math.floor((Math.random() * 504) + 1);
+  this.x = Math.floor((Math.random() * 504) + -90);
 
   // Array of posible enemies y position
   this.yArray = [41.5, 124.5, 207.5];
@@ -31,7 +31,7 @@ Enemy.prototype.update = function(dt) { // dt = time delta between ticks
   if (this.x > 504) {
 
     // Set enemy x start position
-    this.x = 0;
+    this.x = -90;
 
     // Set enemy position to random yArray value
     this.y = this.yArray[Math.floor(Math.random() * this.yArray.length)];
@@ -48,6 +48,10 @@ Enemy.prototype.update = function(dt) { // dt = time delta between ticks
     // Return player to initial position
     player.x = 202;
     player.y = 373.5;
+
+    allEnemies.forEach(function(enemy) {
+      enemy.x = Math.floor((Math.random() * 504) + -90);
+    });
 
     // Return to level 1
     level = 1;
@@ -118,6 +122,8 @@ var allEnemies = [new Enemy(), new Enemy(), new Enemy()];
 
 // Instantiate player
 var player = new Player();
+
+console.log(allEnemies);
 
 // Listen for key presses and send keys to Player.handleInput() method
 document.addEventListener('keyup', function(e) {
