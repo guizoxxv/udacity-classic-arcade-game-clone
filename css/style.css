@@ -4,18 +4,13 @@ html, body {
   margin: 0;
   padding: 0;
 }
-.flex-center {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
 body {
   text-align: center;
   font-family: monospace;
 }
 .level {
   font-size: 20px;
+  margin-top: 20px;
 }
 a {
   text-decoration: none;
