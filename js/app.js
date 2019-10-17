@@ -1,6 +1,7 @@
 // Set starting level 1
 var level = 1;
-
+var speed;
+var rand;
 // Enemy class
 var Enemy = function() {
 
@@ -18,8 +19,17 @@ var Enemy = function() {
   // Set enemy position to random yArray value
   this.y = this.yArray[Math.floor(Math.random() * this.yArray.length)];
 
-  // Set enemy velocity to a random value between 10 and 30 and multiply by the level to increase difficulty
-  this.veloc = Math.floor((Math.random() * 30) + 10) * level;
+  rand = getRandomInt(1,4);
+    if (rand == 1) {
+        speed = 50;
+    } else if (rand == 2) {
+        speed = 100;
+    } else if (rand == 3) {
+        speed = 200;
+    } else if (rand == 4) {
+        speed = 300;
+    }
+  this.veloc = speed * level;
 };
 
 // Update the enemy's position method
@@ -37,7 +47,6 @@ Enemy.prototype.update = function(dt) { // dt = time delta between ticks
     this.y = this.yArray[Math.floor(Math.random() * this.yArray.length)];
 
     // Set enemy velocity to a random value between 10 and 30 and multiply by the level to increase difficulty
-    this.veloc = Math.floor((Math.random() * 30) + 10) * level;
   }
 
   // Check if enemy hit player
@@ -136,3 +145,7 @@ document.addEventListener('keyup', function(e) {
 
   player.handleInput(allowedKeys[e.keyCode]);
 });
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
